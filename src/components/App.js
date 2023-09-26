@@ -80,13 +80,13 @@ const App=()=>{
   function getFoodItems(category){
     setFoodItems(foodData.filter(food=>food.category===category))
   }
-return(<div>
+return(<div id="main">
     <h1>Our menu</h1>
     <div className="categories">
       <button className="btn" onClick={()=>{setFoodItems(foodData)}}>All</button>
-      <button className="btn" onClick={()=>{getFoodItems("breakfast")}}>Breakfast</button>
-      <button className="btn" onClick={()=>{getFoodItems("lunch")}}>Lunch</button>
-      <button className="btn" onClick={()=>{getFoodItems("shakes")}}>Shakes</button>
+      <button className="btn" id="filter-btn-1"  data-test-id="menu-item-breakfast" onClick={()=>{getFoodItems("breakfast")}}>Breakfast</button>
+      <button className="btn" id="filter-btn-2" data-test-id="menu-item-lunch"onClick={()=>{getFoodItems("lunch")}}>Lunch</button>
+      <button className="btn" id="filter-btn-3" data-test-id="menu-item-shakes" onClick={()=>{getFoodItems("shakes")}}>Shakes</button>
     </div>
     <div className="food-card">{foodItems.map((food)=>
        ( <div className="food-card-item"><div>{food.title}</div>
